@@ -31,8 +31,13 @@ function userIsStable(gyro) {
 }
 
 function getMagnitude(x, y, z) { 
-	document.getElementById('magCalcs').innerHTML = "X: "+x + " Y: "+ y + " Z: "+z;
-    let magnitude = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)); // Calculate mag.
+	powX = Math.pow(x, 2);
+	powY = Math.pow(y, 2);
+	powZ = Math.pow(z, 2);
+	document.getElementById('magCalcs').innerHTML = "X^2: "+powX + " Y^2: "+ powZ + " Z^2: "+powY;
+
+
+    let magnitude = Math.sqrt(powX + powY + powZ); // Calculate mag.
     document.getElementById('magnitude').innerText = magnitude
     console.log(magnitude);
     return magnitude;
