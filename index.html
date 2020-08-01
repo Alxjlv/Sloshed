@@ -5,12 +5,19 @@
     </head>
     <body>
         <p>This is an example of a simple HTML page with one paragraph.</p>
-        <button onclick="gyro()">Click me</button>
+        <button onclick="changeStuff()">Click me</button>
         <p id="x">No X velocity</p>
         <p id="y">No Y velocity</p>
         <p id="z">No Z velocity</p>
     </body>
 	<footer>
 		<script type="src/gyroscope.js"></script>
+		<script>
+			function changeStuff(){
+				document.getElementById('x').innerText("Angular velocity along the X-axis")
+				document.getElementById('y').innerText("Angular velocity along the Y-axis")
+				document.getElementById('z').innerText("Angular velocity along the Z-axis")
+			}
+		</script>
 	</footer>
 </html>
