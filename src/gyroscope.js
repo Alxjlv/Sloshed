@@ -19,10 +19,9 @@ function gyro(){
 }
 
 function userIsStable(gyro) { 
-    let velMagThresh = 0.2; // Min Mag.
+    let velMagThresh = 0.8; // Min Mag.
     document.getElementById('thresh').innerText = velMagThresh
     if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh){
-
     	return false;
     } 
     else {
@@ -37,6 +36,17 @@ function getMagnitude(x, y, z) {
 	total = powX + powY + powZ;
 	document.getElementById('magCalcs').innerHTML = total;
     let magnitude = Math.sqrt(total); // Calculate mag.
+    let maxMag = magnitude;
+    if(!localStorage.getItem('maxMag')){
+    	localStorage.setItem('maxMag',magnitude);
+    }else{
+    	let maxMag = localStorage.getItem('maxMag');
+    	if(maxMag<magnitude){
+    		maxMag = magnitude;
+    		localStorage.setItem('maxMag',magnitude);
+    	}
+    }
+
     document.getElementById('magnitude').innerText = magnitude;
     console.log(magnitude);
     return magnitude;
