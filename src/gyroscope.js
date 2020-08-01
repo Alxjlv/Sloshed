@@ -6,7 +6,7 @@ var sloshed = false;
 var gyroscope = false;
 var error = false;
 
-let startGyro = () => {
+let start = () => {
 	try{
 		gyroscope = new Gyroscope();
 		gyroscope.start();
@@ -17,8 +17,7 @@ let startGyro = () => {
 
 		let isStable = userIsStable(gyroscope);
 		if (isStable) passed++;
-		else failed++;
-		
+		else failed++; 
 		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100) + "%";
 		sloshed = Math.round((passed / (failed + passed)) * 100) < drunkThresh ? true : false;
 		document.getElementById('drunk').innerText = sloshed ? "UR SLOSHED AS!!" : "Nah u good.";
@@ -54,15 +53,14 @@ let userIsStable = (gyro) => {
     }
 }
 
-let playSloshedSound = () => {
+let playSloshedSound() {
 	let sound = new Audio('slosh.mp3');
 	sound.play();
 }
-
-let stopGyro = () => {
+let stop = () => {
 	if(gyroscope) {
 		gyroscope.stop();
-		playSloshedSound();
+		if (slosh) playSloshedSound();
 		return sloshed;
 	}else {
 		return null;
