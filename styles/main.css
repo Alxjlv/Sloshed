@@ -139,13 +139,9 @@ button > a {
 }
 
 .loading-wheel {
-  animation: spin 2s linear infinite;
-  border: 16px solid #fff0ff;
-  border-top: 16px solid #222;
-  border-radius: 50%;
+  animation: spin 1s linear infinite;
   height: 120px;
   margin-top: 24px;
-  width: 120px;
 }
 
 @keyframes spin {

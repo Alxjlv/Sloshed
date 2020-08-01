@@ -5,7 +5,7 @@ function loadDummy() {
   setTimeout(() => {
     loadingSec.classList.toggle("section__show");
     resultsSec.classList.toggle("section__show");
-  }, 2000);
+  }, 5000);
 }
 
 window.onload = loadDummy;
