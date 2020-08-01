@@ -44,8 +44,8 @@ let errorState = () => {
 
 let userIsStable = (gyro) => { 
     let velMagThresh = 0.8; // Min Mag.
-    document.getElementById('thresh').innerText = velMagThresh
-    if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh){
+    document.getElementById('thresh').innerText = velMagThresh;
+    if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh) {
     	return false;
     } 
     else {
@@ -58,11 +58,12 @@ let playSloshedSound() {
 	sound.play();
 }
 let stop = () => {
-	if(gyroscope){
-		gyroscope.stop()
+	if(gyroscope) {
+		gyroscope.stop();
+		playSloshedSound();
 		return sloshed;
-	}else{
-		return null
+	}else {
+		return null;
 	}
 }
 
