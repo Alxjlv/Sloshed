@@ -1,4 +1,6 @@
 var maxMag = 0;
+var passed = 0;
+var failed = 0;
 
 let gyro = () => {
 	let gyroscope = new Gyroscope();
@@ -9,7 +11,11 @@ let gyro = () => {
 		document.getElementById('y').innerHTML = "Angular velocity along the Y-axis " + gyroscope.y;
 		document.getElementById('z').innerHTML = "Angular velocity along the Z-axis " + gyroscope.z;
 
-		document.getElementById('stable').innerText = userIsStable(gyroscope);
+		let isStable = userIsStable(gyroscope);
+		if (isStable) passed++;
+		else failed++;
+		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100);
+				
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
 	  	console.log("Angular velocity along the Y-axis " + gyroscope.y);
 	  	console.log("Angular velocity along the Z-axis " + gyroscope.z);
@@ -35,13 +41,12 @@ let getMagnitude = (x, y, z) => {
 	powX = Math.pow(x, 2);
 	powY = Math.pow(y, 2);
 	powZ = Math.pow(z, 2);
-	total = powX + powY + powZ;
-	document.getElementById('magCalcs').innerHTML = total;
-    let magnitude = Math.sqrt(total); // Calculate mag.
+    let magnitude = Math.sqrt(powX + powY + powZ); // Calculate mag.
     
-	if(maxMag<magnitude){
+	if(maxMag < magnitude){
 		maxMag = magnitude;
 	}
+	
     document.getElementById('maxMag').innerHTML = maxMag;
     document.getElementById('magnitude').innerText = magnitude;
     console.log(magnitude);
