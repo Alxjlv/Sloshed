@@ -14,9 +14,12 @@
 		<script type="src/gyroscope.js"></script>
 		<script>
 			function changeStuff(){
-				document.getElementById('x').innerHTML("Angular velocity along the X-axis")
-				document.getElementById('y').innerHTML("Angular velocity along the Y-axis")
-				document.getElementById('z').innerHTML("Angular velocity along the Z-axis")
+				var x = document.getElementById('x');
+				x.innerText = "Angular velocity along the X-axis";
+				var y = document.getElementById('y');
+				y.innerText = "Angular velocity along the Y-axis";
+				var z = document.getElementById('z');
+				z.innerText = "Angular velocity along the Z-axis";
 			}
 		</script>
 	</footer>

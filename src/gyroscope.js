@@ -2,10 +2,13 @@ function gyro(){
 	let gyroscope = new Gyroscope({frequency: 60});
 
 	gyroscope.addEventListener('reading', e => {
-		document.getElementById('x').innerHTML("Angular velocity along the X-axis " + gyroscope.x)
-		document.getElementById('y').innerHTML("Angular velocity along the Y-axis " + gyroscope.y)
-		document.getElementById('z').innerHTML("Angular velocity along the Z-axis " + gyroscope.z)
+		var x = document.getElementById('x');
+		var y = document.getElementById('y');
+		var z = document.getElementById('z');
 
+		x.innerText = "Angular velocity along the X-axis " + gyroscope.x;
+		y.innerText = "Angular velocity along the Y-axis " + gyroscope.y;
+		z.innerHText = "Angular velocity along the Z-axis " + gyroscope.z;
 
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
 	  	console.log("Angular velocity along the Y-axis " + gyroscope.y);
