@@ -2,22 +2,25 @@ var maxMag = 0;
 var passed = 0;
 var failed = 0;
 var drunkThresh = 70;
+var sloshed = false;
+var gyroscope = false;
+var error = false;
 
-
-let gyro = () => {
-	let gyroscope = new Gyroscope();
-	gyroscope.start();
-
-	gyroscope.onreading = () => {
-		document.getElementById('x').innerHTML = "Angular velocity along the X-axis " + gyroscope.x;
-		document.getElementById('y').innerHTML = "Angular velocity along the Y-axis " + gyroscope.y;
-		document.getElementById('z').innerHTML = "Angular velocity along the Z-axis " + gyroscope.z;
+let start = () => {
+	try{
+		gyroscope = new Gyroscope();
+		gyroscope.start();
+		gyroscope.onreading = () => {
+			document.getElementById('x').innerHTML = "Angular velocity along the X-axis " + gyroscope.x;
+			document.getElementById('y').innerHTML = "Angular velocity along the Y-axis " + gyroscope.y;
+			document.getElementById('z').innerHTML = "Angular velocity along the Z-axis " + gyroscope.z;
 
 		let isStable = userIsStable(gyroscope);
 		if (isStable) passed++;
 		else failed++;
 		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100) + "%";
-		document.getElementById('drunk').innerText = Math.round((passed / (failed + passed)) * 100) < drunkThresh ? "UR SLOSHED AS!!" : "Nah u good.";
+		sloshed = Math.round((passed / (failed + passed)) * 100) < drunkThresh ? true : false;
+		document.getElementById('drunk').innerText = sloshed ? "UR SLOSHED AS!!" : "Nah u good.";
 		document.getElementById('stable').innerText = isStable;
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
 	  	console.log("Angular velocity along the Y-axis " + gyroscope.y);
@@ -26,7 +29,17 @@ let gyro = () => {
 	gyroscope.onerror = event => {
 		console.log(event.error.name, event.error.message)
 		document.getElementById('error').innerText = event.error.name, event.error.message;
+		error = true;
 	}
+	}catch(error){
+		console.log(error.message);
+		document.getElementById('error').innerText = error.message;
+		error = true;
+	}
+}
+
+let errorState = () => {
+	return error;
 }
 
 let userIsStable = (gyro) => { 
@@ -43,6 +56,14 @@ let userIsStable = (gyro) => {
 let playSloshedSound() {
 	let sound = new Audio('slosh.mp3');
 	sound.play();
+}
+let stop = () => {
+	if(gyroscope){
+		gyroscope.stop()
+		return sloshed;
+	}else{
+		return null
+	}
 }
 
 let getMagnitude = (x, y, z) => { 
