@@ -40,15 +40,13 @@ p {
     #COMPONENTS
 \*------------------------------------*/
 
-button {
+.btn {
+  border: 1px solid red;
+  color: #222;
   font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
   line-height: 42px;
-}
-
-button > a {
-  color: #222;
   text-decoration: none;
 }
 
@@ -219,7 +217,7 @@ button > a {
 .results-card-btn {
   font-size: 24px;
   font-weight: bold;
-  line-height: 31px;
+  line-height: 76px;
 }
 
 /*------------------------------------*\
