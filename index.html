@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Sloshed</title>
-    </head>
-    <body>
-    	<h3>Example v0.9.1_pa</h3>
-        <p>This is an example of a simple HTML page with one paragraph.</p>
-        <button onclick="startGyro()">Start gyroscope</button>
-        <p id="x">No X velocity</p>
-        <p id="y">No Y velocity</p>
-        <p id="z">No Z velocity</p>
-        <p>Current threshhold: <b id="thresh"></b></p>
-        <p>Magnitude: <b id="magnitude">0</b></p>
-        <p>User is stable? <b id="stable">True</b></p>
-        <p>Max magnitude so far: <b id="maxMag">0</b>
-		<p>Pass Rate: <b id="passRate">null</b>
-        <p>Errors: <b id="error">No errors</b></p>
-		<p>Are You Drunk?: <b id="drunk">yes</b></p>
-		<button onclick="stopGyro()">Stop gyroscope</button>
-		<h2 id="final" style="display:none"></h2>
-    </body>
-	<footer>
-		<script src="src/gyroscope.js" type="text/javascript"></script>
-	</footer>
-	</footer>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sloshed</title>
+
+    <link rel="stylesheet" href="styles/sanitize.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+
+  <body>
+    <div class="container landing">
+
+      <div class="landing-hero">
+        <img class="landing-img" src="images/landing-hero.png">
+      </div>
+
+      <section class="landing-content">
+        <h1>Sloshed!</h1>
+
+        <p>
+          Find your local liquor store or bar quickly
+          <br/>
+          (and responsibly 😂)
+        </p>
+
+        <button class="btn-primary landing-btn">
+          <a href="results.html">Get me sloshed!</a>
+        </button>
+      </section>
+    </div>
+  </body>
 </html>

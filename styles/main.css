@@ -1,0 +1,231 @@
+body {
+  background-color: #ffe1f4;
+  color: #222;
+  font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 48px 24px;
+  max-width: 960px;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 42px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31px;
+  margin: 0;
+}
+
+p {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 31px;
+}
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+button {
+  font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+button > a {
+  color: #222;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #ffe1f4;
+  box-shadow: 20px 20px 60px #d9b2ca, -20px -20px 60px #fff0ff;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  transition: ease 0.3s;
+}
+
+.btn-primary:active {
+  background: #fff;
+  box-shadow: 25px 25px 75px #d9b2ca, -25px -25px 75px #fff0ff;
+  transition: ease 0.3s;
+}
+
+.btn-secondary {
+  background: #fff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 5px 5px 20px #d9b2ca, -5px -5px 20px rgba(255, 240, 255, 0.2);
+  transition: ease 0.3s;
+}
+
+.btn-secondary:active {
+  box-shadow: 6px 6px 25px #d9b2ca, -6px -6px 25px rgba(255, 240, 255, 0.2);
+  transition: ease 0.3s;
+}
+
+.btn-uber {
+  background: #222;
+  color: #fff;
+}
+
+/*------------------------------------*\
+    #LANDING-PAGE
+\*------------------------------------*/
+
+.landing {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.landing-btn {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.landing-hero {
+  display: flex;
+  max-height: 50vh;
+}
+
+.landing-img {
+  max-height: 100%;
+  max-width: 800px;
+  object-fit: contain;
+  object-position: center;
+  width: 80vw;
+}
+
+/*------------------------------------*\
+    #RESULTS-PAGE
+\*------------------------------------*/
+
+.loading {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading-heading {
+  margin: 0;
+}
+
+.loading-wheel {
+  animation: spin 1s linear infinite;
+  height: 120px;
+  margin-top: 24px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.results {
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.results-card {
+  animation: file--fadein 0.4s ease;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 5px 5px 20px #d9b2ca, -5px -5px 20px rgba(255, 240, 255, 0.2);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 80px 130px auto 80px;
+  height: 420px;
+  margin-top: 24px;
+  max-width: 600px;
+  transition: ease 0.3s;
+  width: 100%;
+}
+
+.results-card-heading {
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  margin-left: 24px;
+}
+
+.results-card-dist {
+  align-items: center;
+  display: flex;
+  justify-self: flex-end;
+  margin-right: 24px;
+}
+
+.results-card-img {
+  grid-column: 1 / 3;
+}
+
+.results-card-img > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.results-card-attributes {
+  grid-column: 1 / 3;
+}
+
+.results-card-attr-item {
+  align-items: center;
+  display: flex;  
+  padding: 16px 0;
+}
+
+.results-card-attr-icon {
+  margin: 0 16px;
+}
+
+.results-card-attr-item > p {
+  margin: 0px;
+}
+
+.results-card-btn {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31px;
+}
+
+/*------------------------------------*\
+    #TOGGLE-CLASSES
+\*------------------------------------*/
+
+.section__show {
+  display: flex;
+}
