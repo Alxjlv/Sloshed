@@ -3,3 +3,89 @@ body {
   color: #222;
   font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 }
+
+.container {
+  margin: 0 auto;
+  padding: 48px 24px;
+  max-width: 960px;
+  max-height: 100vh;
+  /* overflow: hidden; */
+}
+
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 42px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31px;
+  margin-top: 0;
+}
+
+p {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 31px;
+  margin-top: 0;
+}
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+button {
+  font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+.btn-primary {
+  background: #ffe1f4;
+  box-shadow: 20px 20px 60px #d9b2ca, -20px -20px 60px #fff0ff;
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/*------------------------------------*\
+    #LANDING-PAGE
+\*------------------------------------*/
+
+.landing {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.landing-btn {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.landing-hero {
+  display: flex;
+  max-height: 50vh;
+}
+
+.landing-img {
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
