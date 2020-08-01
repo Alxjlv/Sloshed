@@ -3,9 +3,9 @@ function gyro(){
 	gyroscope.start();
 
 	gyroscope.onreading = () => {
-		document.getElementById('x').innerText = "Angular velocity along the X-axis " + gyroscope.x;
-		document.getElementById('y').innerText = "Angular velocity along the Y-axis " + gyroscope.y;
-		document.getElementById('z').innerText = "Angular velocity along the Z-axis " + gyroscope.z;
+		document.getElementById('x').innerHTML = "Angular velocity along the X-axis " + gyroscope.x;
+		document.getElementById('y').innerHTML = "Angular velocity along the Y-axis " + gyroscope.y;
+		document.getElementById('z').innerHTML = "Angular velocity along the Z-axis " + gyroscope.z;
 
 		document.getElementById('stable').innerText = userIsStable(gyroscope);
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
@@ -21,11 +21,17 @@ function gyro(){
 function userIsStable(gyro) { 
     let velMagThresh = 0.2; // Min Mag.
     document.getElementById('thresh').innerText = velMagThresh
-    if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh) return false;
-    else return true;
+    if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh){
+
+    	return false;
+    } 
+    else {
+    	return true;
+    }
 }
 
 function getMagnitude(x, y, z) { 
+	document.getElementById('magCalcs').innerHTML = "X: "+x + " Y: "+ y + " Z: "+z;
     let magnitude = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2)); // Calculate mag.
     document.getElementById('magnitude').innerText = magnitude
     console.log(magnitude);
