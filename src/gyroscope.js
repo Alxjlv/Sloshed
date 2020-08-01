@@ -54,7 +54,7 @@ let userIsStable = (gyro) => {
 }
 
 function playSound(){
-	let audio = new Audio("/src/slosh.mp3");
+	let audio = new Audio("src/slosh.mp3");
 	console.log(audio);
 	audio.Play();
 }
