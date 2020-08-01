@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/sanitize.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Material Icons -->
 
   </head>
 
@@ -25,22 +26,29 @@
       <h1 class="loading-heading">Results</h1>
 
       <div class="results-card">
-        <h2>Liquor King</h2>
-        <p>60m</p>
+        <h2 class="results-card-heading">Liquor King</h2>
+        <p class="results-card-dist">60m</p>
         
         <div class="results-card-img">
-          Image
+          <img src="images/results-sample-location.png">
         </div>
 
         <div class="results-card-attributes">
-          Attributes
+          <div class="results-card-attr-item">
+            <i class="material-icons results-card-attr-icon">location_on</i>
+            <p>90 Address St, Auckland</p>
+          </div>
+          <div class="results-card-attr-item">
+            <i class="material-icons results-card-attr-icon">schedule</i>
+            <p>Open now (11am - 10pm)</p>
+          </div>
         </div>
 
-        <button class="results-card-btn">
+        <button class="results-card-btn btn-secondary btn-uber">
           Call Uber
         </button>
-        <button class="results-card-btn">
-          Get Directions
+        <button class="results-card-btn btn-secondary">
+          Directions
         </button>
 
       </div>
