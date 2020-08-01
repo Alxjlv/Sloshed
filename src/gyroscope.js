@@ -62,7 +62,7 @@ function playSound(){
 let stopGyro = () => {
 	if(gyroscope) {
 		gyroscope.stop();
-		if (slosh) playSound();
+		if (sloshed) playSound();
 		return sloshed;
 	}else {
 		return null;
