@@ -14,7 +14,7 @@ let gyro = () => {
 		let isStable = userIsStable(gyroscope);
 		if (isStable) passed++;
 		else failed++;
-		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100);
+		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100) + "%";
 				
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
 	  	console.log("Angular velocity along the Y-axis " + gyroscope.y);
