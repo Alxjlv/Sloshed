@@ -6,7 +6,7 @@ var sloshed = false;
 var gyroscope = false;
 var error = false;
 
-let start = () => {
+let startGyro = () => {
 	try{
 		gyroscope = new Gyroscope();
 		gyroscope.start();
