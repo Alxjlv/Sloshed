@@ -18,6 +18,7 @@ let start = () => {
 		let isStable = userIsStable(gyroscope);
 		if (isStable) passed++;
 		else failed++;
+		
 		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100) + "%";
 		sloshed = Math.round((passed / (failed + passed)) * 100) < drunkThresh ? true : false;
 		document.getElementById('drunk').innerText = sloshed ? "UR SLOSHED AS!!" : "Nah u good.";
