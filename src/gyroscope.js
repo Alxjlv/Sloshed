@@ -64,7 +64,7 @@ function playSound(url){
   document.body.appendChild(audio);
 }
 
-let stop = () => {
+let stopGyro = () => {
 	if(gyroscope) {
 		gyroscope.stop();
 		if (slosh) playSound("slosh.mp3");
