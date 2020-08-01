@@ -46,7 +46,7 @@ function getMagnitude(x, y, z) {
     		localStorage.setItem('maxMag',magnitude);
     	}
     }
-
+    document.getElementById('maxMag').innerHTML = maxMag;
     document.getElementById('magnitude').innerText = magnitude;
     console.log(magnitude);
     return magnitude;
