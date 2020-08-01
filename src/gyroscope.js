@@ -1,4 +1,6 @@
-function gyro(){
+var maxMag = 0;
+
+let gyro = () => {
 	let gyroscope = new Gyroscope();
 	gyroscope.start();
 
@@ -18,7 +20,7 @@ function gyro(){
 	}
 }
 
-function userIsStable(gyro) { 
+let userIsStable = (gyro) => { 
     let velMagThresh = 0.8; // Min Mag.
     document.getElementById('thresh').innerText = velMagThresh
     if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh){
@@ -29,23 +31,17 @@ function userIsStable(gyro) {
     }
 }
 
-function getMagnitude(x, y, z) { 
+let getMagnitude = (x, y, z) => { 
 	powX = Math.pow(x, 2);
 	powY = Math.pow(y, 2);
 	powZ = Math.pow(z, 2);
 	total = powX + powY + powZ;
 	document.getElementById('magCalcs').innerHTML = total;
     let magnitude = Math.sqrt(total); // Calculate mag.
-    let maxMag = magnitude;
-    if(!localStorage.getItem('maxMag')){
-    	localStorage.setItem('maxMag',magnitude);
-    }else{
-    	let maxMag = localStorage.getItem('maxMag');
-    	if(maxMag<magnitude){
-    		maxMag = magnitude;
-    		localStorage.setItem('maxMag',magnitude);
-    	}
-    }
+    
+	if(maxMag<magnitude){
+		maxMag = magnitude;
+	}
     document.getElementById('maxMag').innerHTML = maxMag;
     document.getElementById('magnitude').innerText = magnitude;
     console.log(magnitude);
