@@ -5,22 +5,14 @@
     </head>
     <body>
         <p>This is an example of a simple HTML page with one paragraph.</p>
-        <button onclick="changeStuff()">Click me</button>
+        <button onclick="gyro()">Click me</button>
         <p id="x">No X velocity</p>
         <p id="y">No Y velocity</p>
         <p id="z">No Z velocity</p>
+        <p>Errors: <b id="error">No errors</b></p>
     </body>
 	<footer>
-		<script type="src/gyroscope.js"></script>
-		<script>
-			function changeStuff(){
-				var x = document.getElementById('x');
-				x.innerText = "Angular velocity along the X-axis";
-				var y = document.getElementById('y');
-				y.innerText = "Angular velocity along the Y-axis";
-				var z = document.getElementById('z');
-				z.innerText = "Angular velocity along the Z-axis";
-			}
-		</script>
+		<script src="src/gyroscope.js" type="text/javascript"></script>
+	</footer>
 	</footer>
 </html>
