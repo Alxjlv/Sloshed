@@ -16,6 +16,7 @@ let gyro = () => {
 		else failed++;
 		document.getElementById('passRate').innerText =  Math.round((passed / (failed + passed)) * 100) + "%";
 				
+		document.getElementById('stable').innerText = isStable;
 	  	console.log("Angular velocity along the X-axis " + gyroscope.x);
 	  	console.log("Angular velocity along the Y-axis " + gyroscope.y);
 	  	console.log("Angular velocity along the Z-axis " + gyroscope.z);
