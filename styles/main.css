@@ -54,6 +54,13 @@ button {
   border: none;
   border-radius: 16px;
   padding: 16px;
+  transition: ease 0.3s;
+}
+
+.btn-primary:active {
+  background: #fff;
+  box-shadow: 25px 25px 75px #d9b2ca, -25px -25px 75px #fff0ff;
+  transition: ease 0.3s;
 }
 
 /*------------------------------------*\
@@ -86,6 +93,8 @@ button {
 
 .landing-img {
   max-height: 100%;
+  max-width: 800px;
   object-fit: contain;
   object-position: center;
+  width: 80vw;
 }
