@@ -6,7 +6,7 @@ var sloshed = false;
 var gyroscope = false;
 var error = false;
 
-let start = () => {
+let startGyro = () => {
 	try{
 		gyroscope = new Gyroscope();
 		gyroscope.start();
@@ -53,11 +53,12 @@ let userIsStable = (gyro) => {
     }
 }
 
-let playSloshedSound() {
+let playSloshedSound = () => {
 	let sound = new Audio('slosh.mp3');
 	sound.play();
 }
-let stop = () => {
+
+let stopGyro = () => {
 	if(gyroscope) {
 		gyroscope.stop();
 		playSloshedSound();
