@@ -155,7 +155,7 @@ button > a {
 
 .results {
   align-items: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   height: 100vh;
   justify-content: center;
@@ -207,8 +207,8 @@ button > a {
 }
 
 .results-card-attr-item {
-  display: flex;
   align-items: center;
+  display: flex;  
   padding: 16px 0;
 }
 
@@ -224,4 +224,12 @@ button > a {
   font-size: 24px;
   font-weight: bold;
   line-height: 31px;
+}
+
+/*------------------------------------*\
+    #TOGGLE-CLASSES
+\*------------------------------------*/
+
+.section__show {
+  display: flex;
 }
