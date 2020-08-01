@@ -1,5 +1,4 @@
 function gyro(){
-	document.getElementById('x').innerText = "testing"
 	let gyroscope = new Gyroscope();
 	gyroscope.start();
 
