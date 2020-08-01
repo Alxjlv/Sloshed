@@ -9,7 +9,7 @@ body {
   padding: 48px 24px;
   max-width: 960px;
   max-height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /*------------------------------------*\
@@ -20,21 +20,20 @@ h1 {
   font-size: 32px;
   font-weight: bold;
   line-height: 42px;
-  margin-top: 0;
+  margin: 0;
 }
 
 h2 {
   font-size: 24px;
   font-weight: bold;
   line-height: 31px;
-  margin-top: 0;
+  margin: 0;
 }
 
 p {
   font-size: 24px;
   font-weight: normal;
   line-height: 31px;
-  margin-top: 0;
 }
 
 /*------------------------------------*\
@@ -46,6 +45,11 @@ button {
   font-size: 32px;
   font-weight: bold;
   line-height: 42px;
+}
+
+button > a {
+  color: #222;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -97,4 +101,36 @@ button {
   object-fit: contain;
   object-position: center;
   width: 80vw;
+}
+
+/*------------------------------------*\
+    #RESULTS-PAGE
+\*------------------------------------*/
+
+.loading {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading-heading {
+  margin: 0;
+}
+
+.loading-wheel {
+  animation: spin 2s linear infinite;
+  border: 16px solid #fff0ff;
+  border-top: 16px solid #222;
+  border-radius: 50%;
+  height: 120px;
+  margin-top: 24px;
+  width: 120px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
