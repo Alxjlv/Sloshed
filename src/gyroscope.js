@@ -53,14 +53,21 @@ let userIsStable = (gyro) => {
     }
 }
 
-let playSloshedSound() {
-	let sound = new Audio('slosh.mp3');
-	sound.play();
+function playSound(url){
+  var audio = document.createElement('audio');
+  audio.style.display = "none";
+  audio.src = url;
+  audio.autoplay = true;
+  audio.onended = function(){
+    audio.remove() // Remove when played.
+  };
+  document.body.appendChild(audio);
 }
+
 let stop = () => {
 	if(gyroscope) {
 		gyroscope.stop();
-		if (slosh) playSloshedSound();
+		if (slosh) playSound("slosh.mp3");
 		return sloshed;
 	}else {
 		return null;
