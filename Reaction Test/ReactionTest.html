@@ -4,12 +4,18 @@
         <link rel="stylesheet" type="text/css" href="ReactionTestStyle.css">
     </head>
 <script>
+    var canvas = document.getElementById("ballCanvas");
     var context;
     
+    var canvasWidth=window.innerWidth;
+    var canvasHeight=800;
     
-    var canvasWidth=200;
-    var canvasHeight=400;
+    canvas.style.width=canvasWidth;
+    canvas.style.setHeight=canvasHeight;
+    canvas.width=canvasWidth;
+    canvas.setHeight=canvasHeight;
     
+    console.log("Canvas width is " + canvas.width);
     
     //Positions
     var x=canvasWidth/2;
@@ -55,8 +61,9 @@
 
 </script>
 <body onLoad="init();">
-    <canvas id="ballCanvas" width="200" height="400"></canvas>
-    <button onclick="buttonHandler();">GO!</button>
-    
+    <div class="flex-container">
+        <div><canvas id="ballCanvas"></canvas></div>
+        <div><button onclick="buttonHandler();">GO!</button></div>
+    </div>
 </body>
 </html>
