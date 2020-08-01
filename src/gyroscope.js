@@ -34,10 +34,9 @@ function getMagnitude(x, y, z) {
 	powX = Math.pow(x, 2);
 	powY = Math.pow(y, 2);
 	powZ = Math.pow(z, 2);
-	document.getElementById('magCalcs').innerHTML = "X^2: "+powX + " Y^2: "+ powZ + " Z^2: "+powY;
-
 	total = powX + powY + powZ;
-    let magnitude = Math.sqrt(25); // Calculate mag.
+	document.getElementById('magCalcs').innerHTML = total;
+    let magnitude = Math.sqrt(total); // Calculate mag.
     document.getElementById('magnitude').innerText = magnitude;
     console.log(magnitude);
     return magnitude;
