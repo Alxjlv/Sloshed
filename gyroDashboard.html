@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sloshed</title>
+    </head>
+    <body>
+    	<h3>Example v0.9.1_pa</h3>
+        <p>This is an example of a simple HTML page with one paragraph.</p>
+        <button onclick="startGyro()">Start gyroscope</button>
+        <p id="x">No X velocity</p>
+        <p id="y">No Y velocity</p>
+        <p id="z">No Z velocity</p>
+        <p>Current threshhold: <b id="thresh"></b></p>
+        <p>Magnitude: <b id="magnitude">0</b></p>
+        <p>User is stable? <b id="stable">True</b></p>
+        <p>Max magnitude so far: <b id="maxMag">0</b>
+		<p>Pass Rate: <b id="passRate">null</b>
+        <p>Errors: <b id="error">No errors</b></p>
+		<p>Are You Drunk?: <b id="drunk">yes</b></p>
+		<button onclick="stopGyro()">Stop gyroscope</button>
+		<h2 id="final" style="display:none"></h2>
+    </body>
+	<footer>
+		<script src="src/gyroscope.js" type="text/javascript"></script>
+	</footer>
+	</footer>
+</html>
