@@ -16,7 +16,7 @@ function responsibilityCheck() {
   startGyro();
 
   // if there is no gyroscope, instantly redirect
-  if (!errorState()) {
+  if (errorState()) {
     window.location.href = "reaction-test.html";
   }
 
