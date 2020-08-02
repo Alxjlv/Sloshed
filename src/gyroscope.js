@@ -55,9 +55,17 @@ let userIsStable = (gyro) => {
     }
 }
 
+let playSound = () => {
+	var sound = new Audio('src/slosh.mp3');
+	sound.play();
+}
+
 let stopGyro = () => {
 	if(gyroscope) {
 		gyroscope.stop();
+		if ( sloshed ) {
+			playSound();
+		}
 		return sloshed;
 	}else {
 		return null;
