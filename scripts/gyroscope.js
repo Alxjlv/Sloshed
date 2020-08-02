@@ -9,11 +9,11 @@ const dashboard = document.title == "Gyroscope Dashboard" ? true : false;
 const velMagThresh = 0.8; // Min Mag.
 
 let startGyro = () => {
-	console.log("About to start gyro");
+  console.log("About to start gyro");
   try {
     gyroscope = new Gyroscope();
-		gyroscope.start();
-		console.log("Now reading from gyro");
+    gyroscope.start();
+    console.log("Now reading from gyro");
     gyroscope.onreading = () => {
       let isStable = userIsStable(gyroscope);
       if (isStable) passed++;
@@ -66,9 +66,17 @@ let userIsStable = (gyro) => {
   }
 };
 
+let playSound = () => {
+  var sound = new Audio("media/slosh.mp3");
+  sound.play();
+};
+
 let stopGyro = () => {
   if (gyroscope) {
     gyroscope.stop();
+    if (sloshed) {
+      playSound();
+    }
     return sloshed;
   } else {
     return null;
