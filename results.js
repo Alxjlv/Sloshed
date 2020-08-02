@@ -7,36 +7,15 @@ const SEARCH_RADIUS = '200';
 async function getLocationsAsync() {
     const currentPos = geoFindMe();
     const locations = await retrieveData(currentPos);
+
     console.log(JSON.stringify(locations));
 
-    // nearbySearch();
+    return locations;
 }
 
 function geoFindMe() {
     return new google.maps.LatLng(-36.842240, 174.756797);
 }
-
-// const encodeGetParams = p =>
-//     Object.entries(p).map(kv => kv.map(encodeURIComponent).join("=")).join("&");
-
-// async function nearbySearch() {
-//     const apiKey = "AIzaSyDUqXF3eNX4my85sgEgdWLl30BSUfyDtso";
-
-//     const parameters = {
-//         key: apiKey,
-//         location: "-36.842240,174.756797",
-//         rankby: "distance",
-//         type: ['bars']
-//     }
-
-//     const url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
-//     const params = encodeGetParams(parameters)
-//     const response = await fetch(url + params)
-//     const data = response.json()
-
-//     console.log(data)
-// }
-
 
 function retrieveData(currentPos) {
     // TODO find way to make API call work without this
@@ -48,16 +27,14 @@ function retrieveData(currentPos) {
     const requestBars = {
         location: currentPos,
         radius: SEARCH_RADIUS,
-        // rankby: "distance",
         type: ['bar']
     };
 
     const service = new google.maps.places.PlacesService(map);
-    //service.nearbySearch(requestLiquor, callbackLiquor);
     return new Promise((resolve, reject) => {
         service.nearbySearch(requestBars, (results, status) => {
-            let locations = [];
             if (status === google.maps.places.PlacesServiceStatus.OK) {
+                let locations = [];
                 for (let i = 0; i < results.length; i++) {
                     // console.log(results)
                     const result = {
@@ -71,9 +48,10 @@ function retrieveData(currentPos) {
                         is_open_now: results[i].opening_hours ? results[i].opening_hours.open_now : false,
 
                         lat: results[i].geometry.location.lat().toString(),
+
                         lng: results[i].geometry.location.lng().toString(),
+
                         address: results[i].vicinity ? results[i].vicinity : 'Unknown',
-                        // type: results[i].types,
 
                         // TODO add something to calculate distance from current location
                         distance: 0
@@ -81,11 +59,8 @@ function retrieveData(currentPos) {
                     locations.push(result);
                 }
 
-                resolve(locations)
-
+                resolve(locations);
             }
         });
-
-    })
-
+    });
 }
