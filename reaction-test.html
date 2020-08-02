@@ -1,71 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sloshed</title>
+
+    <link rel="stylesheet" href="styles/sanitize.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles/reaction-test.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Google Material Icons -->
   </head>
-  <script>
-    var context;
-    var canvasWidth = window.innerWidth;
-    var canvasHeight = window.innerHeight - 75;
 
-    //Positions
-    var x = canvasWidth / 2;
-    var y = 0;
-
-    //Change in vertical position
-    var dy = 5;
-    var myInterval;
-
-    //Attempt counter
-    var counter = 3;
-
-    function init() {
-      context = ballCanvas.getContext("2d");
-      myInterval = setInterval(bounceBall, 20);
-      context.canvas.width = canvasWidth;
-      context.canvas.height = canvasHeight;
-    }
-
-    function bounceBall() {
-      context.clearRect(0, 0, canvasWidth, canvasHeight);
-      context.fillStyle = "white";
-
-      context.fillRect(
-        0,
-        (canvasHeight * 2) / 5,
-        canvasWidth,
-        canvasHeight / 5
-      );
-
-      context.fillStyle = "black";
-
-      // Draws a circle of radius 20
-      context.beginPath();
-      context.arc(x, y, canvasHeight / 12, 0, Math.PI * 2, true);
-      context.closePath();
-      context.fill();
-      if (y < 0 || y > canvasHeight) dy = -dy;
-      y += dy;
-    }
-
-    function buttonHandler() {
-      if (y > (canvasHeight * 2) / 5 && y < (canvasHeight * 3) / 5) {
-        // if the user passes, redirect them to the results
-        clearInterval(myInterval);
-        window.location.href = "results.html";
-      } else {
-        counter -= 1;
-        document.getElementById("gameButton").innerHTML =
-          "You have " + counter + " attempts";
-        if (counter == 0) {
-          // if the user fails all three attempts, redirect them to go home
-          window.location.href = "sloshed.html";
-        }
-      }
-    }
-  </script>
   <body onLoad="init();">
-    <div id="flex-container">
+    <div class="test-container section__show">
       <div><canvas id="ballCanvas"></canvas></div>
       <div id="buttonDiv">
         <button id="gameButton" onclick="buttonHandler();">
@@ -73,5 +28,44 @@
         </button>
       </div>
     </div>
+
+    <section class="container results">
+      <h1 class="loading-heading">Results</h1>
+
+      <div class="results-card">
+        <h2 class="results-card-heading">Vultures' Lane</h2>
+        <p class="results-card-dist">2.2km</p>
+
+        <div class="results-card-img">
+          <img src="images/results-sample-location.png" />
+        </div>
+
+        <div class="results-card-attributes">
+          <div class="results-card-attr-item">
+            <i class="material-icons results-card-attr-icon">location_on</i>
+            <p>10 Vulcan Ln, Auckland</p>
+          </div>
+          <div class="results-card-attr-item">
+            <i class="material-icons results-card-attr-icon">schedule</i>
+            <p>Open now (12pm - 12am)</p>
+          </div>
+        </div>
+
+        <a
+          class="btn results-card-btn btn-secondary btn-uber"
+          href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff%5Blatitude%5D=-36.8470972&dropoff%5Blongitude%5D=174.7664609"
+        >
+          Call Uber
+        </a>
+        <a
+          class="btn results-card-btn btn-secondary btn-dir"
+          href="https://www.google.com/maps/dir/?api=1&destination=-36.8470972,174.7664609"
+        >
+          Directions
+        </a>
+      </div>
+    </section>
+
+    <script src="scripts/reaction-test.js"></script>
   </body>
 </html>

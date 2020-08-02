@@ -16,10 +16,13 @@ function responsibilityCheck() {
   startGyro();
 
   // if there is no gyroscope, instantly redirect
-  if (errorState()) {
-    window.location.href = "reaction-test.html";
-  }
-
+  // this happens after 1 second to give the gyroscope time to error out
+  setTimeout(() => {
+    if (errorState()) {
+      window.location.href = "reaction-test.html";
+    }
+  }, 1000)
+  
   // after 5 seconds, show results only if gyro test passed
   setTimeout(() => {
     let userState = stopGyro();

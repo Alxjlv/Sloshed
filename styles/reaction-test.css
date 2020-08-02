@@ -2,8 +2,8 @@
   background: #ffe1f4;
 }
 
-.flex-container {
-  display: flex;
+.test-container {
+  display: none;
   flex-direction: column;
 }
 
