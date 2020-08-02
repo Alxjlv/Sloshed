@@ -83,6 +83,10 @@ p {
   color: #fff;
 }
 
+.btn-dir {
+  grid-column: 2 / 4;
+}
+
 /*------------------------------------*\
     #LANDING-PAGE
 \*------------------------------------*/
@@ -163,7 +167,7 @@ p {
   box-shadow: 5px 5px 20px #d9b2ca, -5px -5px 20px rgba(255, 240, 255, 0.2);
   cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50% auto 110px;
   grid-template-rows: 80px 130px auto 80px;
   height: 420px;
   margin-top: 24px;
@@ -175,6 +179,7 @@ p {
 .results-card-heading {
   align-items: center;
   display: flex;
+  grid-column: 1 / 3;
   justify-content: left;
   margin-left: 24px;
 }
@@ -187,7 +192,7 @@ p {
 }
 
 .results-card-img {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
 }
 
 .results-card-img > img {
@@ -197,7 +202,7 @@ p {
 }
 
 .results-card-attributes {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
 }
 
 .results-card-attr-item {
