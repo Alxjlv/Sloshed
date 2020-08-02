@@ -1,0 +1,33 @@
+#ballCanvas {
+  background: #ffe1f4;
+}
+
+.test-container {
+  display: none;
+  flex-direction: column;
+}
+
+#buttonDiv {
+  text-align: center;
+}
+
+#gameButton {
+  background-color: #a5fabb;
+  border-radius: 19px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  width: 100%;
+}
+
+#gameButton:active {
+  position: relative;
+  top: 1px;
+}

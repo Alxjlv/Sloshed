@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" type="text/css" href="styles/reaction-test.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -18,14 +19,15 @@
     <!-- Google Material Icons -->
   </head>
 
-  <body>
-    <section class="container loading section__show">
-      <h1 class="loading-heading">Loading...</h1>
-
-      <img class="loading-wheel" src="images/loading-bottle.png" />
-
-      <p>We're finding some locations for you!</p>
-    </section>
+  <body onLoad="init();">
+    <div class="test-container section__show">
+      <div><canvas id="ballCanvas"></canvas></div>
+      <div id="buttonDiv">
+        <button id="gameButton" onclick="buttonHandler();">
+          You have 3 Attempts
+        </button>
+      </div>
+    </div>
 
     <section class="container results">
       <h1 class="loading-heading">Your nearest venue:</h1>
@@ -69,13 +71,12 @@
     <!-- map div is currently required for Places API call -->
     <div id="map" style="display:none"></div>
 
+    <script src="scripts/reaction-test.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <!-- TODO remove callback parameter -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUqXF3eNX4my85sgEgdWLl30BSUfyDtso&callback=getLocationsAsync&libraries=places&v=weekly"
         defer></script>
-    <script src="scripts/checker.js"></script>
-    <script src="scripts/gyroscope.js"></script>
     <script src="scripts/results.js"></script>
   </body>
 </html>

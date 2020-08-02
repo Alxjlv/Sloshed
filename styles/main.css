@@ -40,15 +40,12 @@ p {
     #COMPONENTS
 \*------------------------------------*/
 
-button {
+.btn {
+  color: #222;
   font-family: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 32px;
   font-weight: bold;
   line-height: 42px;
-}
-
-button > a {
-  color: #222;
   text-decoration: none;
 }
 
@@ -83,6 +80,10 @@ button > a {
 .btn-uber {
   background: #222;
   color: #fff;
+}
+
+.btn-dir {
+  grid-column: 2 / 4;
 }
 
 /*------------------------------------*\
@@ -165,7 +166,7 @@ button > a {
   box-shadow: 5px 5px 20px #d9b2ca, -5px -5px 20px rgba(255, 240, 255, 0.2);
   cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 50% auto 110px;
   grid-template-rows: 80px 130px auto 80px;
   height: 420px;
   margin-top: 24px;
@@ -177,8 +178,10 @@ button > a {
 .results-card-heading {
   align-items: center;
   display: flex;
+  grid-column: 1 / 3;
   justify-content: left;
   margin-left: 24px;
+  text-align: left;
 }
 
 .results-card-dist {
@@ -189,7 +192,7 @@ button > a {
 }
 
 .results-card-img {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
 }
 
 .results-card-img > img {
@@ -199,13 +202,14 @@ button > a {
 }
 
 .results-card-attributes {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
 }
 
 .results-card-attr-item {
   align-items: center;
-  display: flex;  
+  display: flex;
   padding: 16px 0;
+  text-align: left;
 }
 
 .results-card-attr-icon {
@@ -219,7 +223,28 @@ button > a {
 .results-card-btn {
   font-size: 24px;
   font-weight: bold;
-  line-height: 31px;
+  line-height: 76px;
+}
+
+
+/*------------------------------------*\
+    #SLOSHED-PAGE
+\*------------------------------------*/
+
+.sloshed {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sloshed-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 /*------------------------------------*\
