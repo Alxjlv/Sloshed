@@ -181,6 +181,7 @@ p {
   grid-column: 1 / 3;
   justify-content: left;
   margin-left: 24px;
+  text-align: left;
 }
 
 .results-card-dist {
@@ -206,8 +207,9 @@ p {
 
 .results-card-attr-item {
   align-items: center;
-  display: flex;  
+  display: flex;
   padding: 16px 0;
+  text-align: left;
 }
 
 .results-card-attr-icon {

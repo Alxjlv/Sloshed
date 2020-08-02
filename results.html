@@ -28,11 +28,11 @@
     </section>
 
     <section class="container results">
-      <h1 class="loading-heading">Results</h1>
+      <h1 class="loading-heading">Your nearest venue:</h1>
 
       <div class="results-card">
-        <h2 class="results-card-heading">Vultures' Lane</h2>
-        <p class="results-card-dist">2.2km</p>
+        <h2 class="results-card-heading" id="location-name">Vultures' Lane</h2>
+        <p class="results-card-dist" id="location-dist">69m</p>
 
         <div class="results-card-img">
           <img src="images/results-sample-location.png" />
@@ -41,23 +41,25 @@
         <div class="results-card-attributes">
           <div class="results-card-attr-item">
             <i class="material-icons results-card-attr-icon">location_on</i>
-            <p>10 Vulcan Ln, Auckland</p>
+            <p id="location-addr">10 Vulcan Ln, Auckland</p>
           </div>
           <div class="results-card-attr-item">
             <i class="material-icons results-card-attr-icon">schedule</i>
-            <p>Open now (12pm - 12am)</p>
+            <p id="location-status">Open now (12pm - 12am)</p>
           </div>
         </div>
 
         <a
           class="btn results-card-btn btn-secondary btn-uber"
           href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff%5Blatitude%5D=-36.8470972&dropoff%5Blongitude%5D=174.7664609"
+          id="location-link-uber"
         >
           Call Uber
         </a>
         <a
           class="btn results-card-btn btn-secondary btn-dir"
           href="https://www.google.com/maps/dir/?api=1&destination=-36.8470972,174.7664609"
+          id="location-link-maps"
         >
           Directions
         </a>
