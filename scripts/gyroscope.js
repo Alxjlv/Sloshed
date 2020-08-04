@@ -51,12 +51,9 @@ let errorState = () => {
 
 let userIsStable = (gyro) => {
   if (dashboard) {
-    document.getElementById("x").innerHTML =
-      "Angular velocity along the X-axis " + gyroscope.x;
-    document.getElementById("y").innerHTML =
-      "Angular velocity along the Y-axis " + gyroscope.y;
-    document.getElementById("z").innerHTML =
-      "Angular velocity along the Z-axis " + gyroscope.z;
+    document.getElementById("x").innerHTML = gyroscope.x.toFixed(4);
+    document.getElementById("y").innerHTML = gyroscope.y;
+    document.getElementById("z").innerHTML = gyroscope.z;
     document.getElementById("thresh").innerHTML = velMagThresh;
   }
   if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh) {
