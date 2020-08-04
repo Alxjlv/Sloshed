@@ -52,8 +52,8 @@ let errorState = () => {
 let userIsStable = (gyro) => {
   if (dashboard) {
     document.getElementById("x").innerHTML = gyroscope.x.toFixed(4);
-    document.getElementById("y").innerHTML = gyroscope.y;
-    document.getElementById("z").innerHTML = gyroscope.z;
+    document.getElementById("y").innerHTML = gyroscope.y.toFixed(4);
+    document.getElementById("z").innerHTML = gyroscope.z.toFixed(4);
     document.getElementById("thresh").innerHTML = velMagThresh;
   }
   if (getMagnitude(gyro.x, gyro.y, gyro.z) > velMagThresh) {
