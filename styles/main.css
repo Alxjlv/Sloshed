@@ -322,7 +322,8 @@ h4 {
   background: linear-gradient(145deg, #d9b2ca, #fff0ff);
   /*box-shadow: 15px 15px 30px #d9b2ca, -15px -15px 30px #fff0ff;*/
   margin: 2%;
-  padding: 2% 14%;
+  padding: 2% 0;
+  width: 40%
 }
 
 .angular-vel {
