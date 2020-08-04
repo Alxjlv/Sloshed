@@ -13,9 +13,10 @@
   </head>
 
     <body>
-    	<h3>Example v0.2_a</h3>
+        <div class="container">
+    	<h3>Example v0.3_a</h3>
         <h2>Gyroscope Dashboard</h2>
-        <button class="btn" onclick="startGyro()">Start gyroscope</button>
+        <button class="btn btn-secondary" onclick="startGyro()">Start gyroscope</button>
         <p class="angular-vel" id="x">No X velocity</p>
         <p class="angular-vel" id="y">No Y velocity</p>
         <p class="angular-vel" id="z">No Z velocity</p>
@@ -26,8 +27,9 @@
 		<p>Pass Rate: <b id="passRate">null</b>
         <p>Errors: <b id="error">No errors</b></p>
 		<p>Are You Drunk?: <b id="drunk">yes</b></p>
-		<button class="btn" onclick="stopGyro()">Stop gyroscope</button>
+		<button class="btn btn-secondary" onclick="stopGyro()">Stop gyroscope</button>
 		<h2 id="final" style="display:none"></h2>
+    </div>
     </body>
 	<footer>
 		<script src="scripts/gyroscope.js" type="text/javascript"></script>
