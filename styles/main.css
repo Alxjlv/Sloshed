@@ -253,7 +253,7 @@ p {
 
 .dashboard {
   overflow: scroll;
-  padding: 24px
+  padding: 24px;
 }
 
 h4 {
@@ -263,12 +263,18 @@ h4 {
   margin: 0;
 }
 
-.angular-vel {
-  margin: 0
-}
-
 .db-p {
   font-size: 18px;
+  margin: 10px 0;
+}
+
+.angular-vel {
+  margin: 0;
+}
+
+.dashboard-header {
+  font-size: 22px;
+  margin: 5px 0;
 }
 /*------------------------------------*\
     #TOGGLE-CLASSES
