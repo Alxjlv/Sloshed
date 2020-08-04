@@ -14,18 +14,18 @@
 
     <body>
         <div class="container dashboard">
-        <h2>Gyroscope Dashboard v0.3_a</h2>
+        <h2>Gyroscope Dashboard v0.4_a</h2>
         <button class="btn btn-secondary" onclick="startGyro()">Start gyroscope</button>
-        <p class="angular-vel" id="x">No X velocity</p>
-        <p class="angular-vel" id="y">No Y velocity</p>
-        <p class="angular-vel" id="z">No Z velocity</p>
-        <p>Current threshhold: <b id="thresh"></b></p>
-        <p>Magnitude: <b id="magnitude">0</b></p>
-        <p>User is stable? <b id="stable">True</b></p>
-        <p>Max magnitude so far: <b id="maxMag">0</b>
-		<p>Pass Rate: <b id="passRate">null</b>
-        <p>Errors: <b id="error">No errors</b></p>
-		<p>Are You Drunk?: <b id="drunk">yes</b></p>
+        <p class="angular-vel db-p" id="x">No X velocity</p>
+        <p class="angular-vel db-p" id="y">No Y velocity</p>
+        <p class="angular-vel db-p" id="z">No Z velocity</p>
+        <p class="db-p">Current threshhold: <b id="thresh"></b></p>
+        <p class="db-p">Magnitude: <b id="magnitude">0</b></p>
+        <p class="db-p">User is stable? <b id="stable">True</b></p>
+        <p class="db-p">Max magnitude so far: <b id="maxMag">0</b>
+		<p class="db-p">Pass Rate: <b id="passRate">null</b>
+        <p class="db-p">Errors: <b id="error">No errors</b></p>
+		<p class="db-p">Are You Drunk?: <b id="drunk">yes</b></p>
 		<button class="btn btn-secondary" onclick="stopGyro()">Stop gyroscope</button>
 		<h2 id="final" style="display:none"></h2>
     </div>
