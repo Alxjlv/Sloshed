@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Gyroscope Dashboard</title>
-    </head>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gyroscope Dashboard</title>
+
+    <link rel="stylesheet" href="styles/sanitize.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+
     <body>
     	<h3>Example v0.1_a</h3>
         <h2>Gyroscope Dashboard</h2>
         <button onclick="startGyro()">Start gyroscope</button>
-        <p id="x">No X velocity</p>
-        <p id="y">No Y velocity</p>
-        <p id="z">No Z velocity</p>
+        <p class="angular-vel" id="x">No X velocity</p>
+        <p class="angular-vel" id="y">No Y velocity</p>
+        <p class="angular-vel" id="z">No Z velocity</p>
         <p>Current threshhold: <b id="thresh"></b></p>
         <p>Magnitude: <b id="magnitude">0</b></p>
         <p>User is stable? <b id="stable">True</b></p>
