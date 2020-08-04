@@ -254,6 +254,10 @@ p {
 .dashboard {
   overflow: scroll;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h4 {
@@ -261,6 +265,8 @@ h4 {
   font-weight: bold;
   line-height: 31px;
   margin: 0;
+  text-align: center;
+  z-index: 1;
 }
 
 .db-p {
@@ -268,17 +274,60 @@ h4 {
   margin: 10px 0;
 }
 
-.vel-panel {
+.gyro-btn {
   background: #ffe1f4;
-  box-shadow: 20px 20px 60px #d9b2ca, -20px -20px 60px #fff0ff;
+  box-shadow: 15px 15px 30px #d9b2ca, -15px -15px 30px #fff0ff;
   border: none;
   border-radius: 16px;
-  padding: 16px;
+  padding: 6px;
   transition: ease 0.3s;
+  margin: 20px;
+  outline: none;
+}
+
+.gyro-btn:active {
+  outline: none;
+  border-radius: 16px;
+  background: #ffe1f4;
+  box-shadow: inset -15px -15px 30px #d9b2ca, 
+              inset 15px 15px 30px #fff0ff;
+}
+
+.vel-panel {
+  display: flex;
+  flex-direction: column;
+  background: #ffe1f4;
+  box-shadow: 20px 20px 30px #d9b2ca, -20px -20px 30px #fff0ff;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 16px;
+  transition: ease 0.3s;
+  margin: 5px;
+  width: 95%;
+  justify-content: center;
+}
+
+.vel-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.vel-item {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  border-radius: 16px;
+  background: #ffe1f4;
+  background: linear-gradient(145deg, #d9b2ca, #fff0ff);
+  /*box-shadow: 15px 15px 30px #d9b2ca, -15px -15px 30px #fff0ff;*/
+  margin: 2%;
+  padding: 2% 14%;
 }
 
 .angular-vel {
   margin: 0;
+  text-align: center;
 }
 
 .dashboard-header {
